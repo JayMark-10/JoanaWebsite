@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="site">
+        <header class="header">
+            <div class="brand">
+                <div class="logo">J</div>
+                <h3>Happy Joana Day</h3>
+            </div>
+            <nav class="navlinks">
+                <a href="index.html">Home</a>
+                <a href="Journey.html">Journey</a>
+                <a href="Gift.html">Gift</a>
+                <a href="Message.html">Message</a>
+                <a href="Playlist.html">Playlist</a>
+            </nav>
+        </header>
+        <div class="message-site">
+            <div class="envelope-container">
+                <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open message">
+                    <div class="flap"></div>
+                </div>
+                <div class="spacer" aria-hidden="true"></div>
+                <div class="center-btn" style="margin-top:12px">
+                    <p class="muted-note">click the envelope</p>
+                </div>
+                <div class="paper" id="paper">
+                    <p>
+                        Happy Birthday Bem <br><br>
+
+                        I just want to tell you how much you mean to me.
+                        I have been thinking about us, na alala ko lang din yung nag kita tayoo sa patay,
+                        tapos naging patay na patay ako sayoo. <br><br>
+
+                        I really appreciate you, Bem — your love, your support, and everything you do. I may not be the
+                        best at making messages, but I promise I’ll always try my best for you. <br><br>
+
+                        I love so many things about you bem, your care for me, the little things you do for our dates,
+                        your laugh and smile that instantly make me happy.
+                        Kase di ka naka sibangot kaya swerte, and sa mga gifts na binibigay mo sakin
+                        What makes me happiest, Bem, is how even the simplest moments with you become memorable — our
+                        freedom dates, kolong dates, nature trips, mall dates, and so many more. All of these moments
+                        are precious to me, and I’ll always remember them. <br><br>
+
+                        I’m sorry if I haven’t been able na ibigay yung materyal na bagay na gusto mo. But I promise,
+                        Bem, babawi ako. Sometimes bem nag w-worry ako baka di mo magustuhan napili ko, kaya lagi ako
+                        nag
+                        ask sayo if ano gusto mo, pero syempre maganda nga naman kung sakin mang gagaling, kaya ako na
+                        bahala hehe kaya I will always do my best because you truly deserve it. <br><br>
+
+                        I hope your birthday is as amazing as you are, Bem. I can’t wait to celebrate with you and make
+                        even more memories together. Thank you for being you —
+                        beautiful, caring, playful, and just downright incredible. I love you so much, and I always
+                        will.
+
+
+                    </p>
+                    <button class="btn close-paper" id="closePaper" aria-label="Close message">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const envelope = document.getElementById('envelope');
+            const paper = document.getElementById('paper');
+            const closeBtn = document.getElementById('closePaper');
+
+            // mouse/tap
+            envelope.addEventListener('click', () => {
+                paper.classList.add('open');
+                // move focus into the paper for keyboard users
+                closeBtn.focus();
+            });
+
+            // keyboard: open on Enter/Space
+            envelope.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    paper.classList.add('open');
+                    closeBtn.focus();
+                }
+            });
+
+            // close handlers
+            closeBtn.addEventListener('click', () => {
+                paper.classList.remove('open');
+                envelope.focus();
+            });
+
+            // close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    paper.classList.remove('open');
+                    envelope.focus();
+                }
+            });
+        </script>
+</body>
+
+</html>
